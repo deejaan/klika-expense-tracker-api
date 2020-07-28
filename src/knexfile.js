@@ -17,11 +17,11 @@ const config = {
     migrations: {
       directory: __dirname + '/database/migrations',
       tableName: 'knex_migrations',
-      extension: 'ts',
+      extension: 'js',
     },
     seeds: {
       directory: __dirname + '/database/seeds/development',
-      extension: 'ts',
+      extension: 'js',
     },
     ...knexSnakeCaseMappers(),
   },
@@ -38,11 +38,11 @@ const config = {
     migrations: {
       directory: __dirname + '/database/migrations',
       tableName: 'knex_migrations',
-      extension: 'ts',
+      extension: 'js',
     },
     seeds: {
       directory: __dirname + '/database/seeds/testing',
-      extension: 'ts',
+      extension: 'js',
     },
     ...knexSnakeCaseMappers(),
   },
@@ -57,11 +57,11 @@ const config = {
     migrations: {
       directory: __dirname + '/database/migrations',
       tableName: 'knex_migrations',
-      extension: 'ts',
+      extension: 'js',
     },
     seeds: {
       directory: __dirname + '/database/seeds/production',
-      extension: 'ts',
+      extension: 'js',
     },
     ...knexSnakeCaseMappers(),
   },
