@@ -192,6 +192,5 @@ module.exports = {
   //   'module_name_(.*)': '<rootDir>/substituted_module_$1.js',
   // },
 
-  globals: {
-  },
+  globals: {},
 };
