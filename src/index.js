@@ -3,11 +3,12 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import helmet from 'helmet';
 import { httpLogger } from './middlewares/logger';
-import router from './routes';
+import router from './routes/index';
 import { port } from './config/vars';
 import logger from './config/logger';
 import { errorHandler, errorConverter, notFound } from './middlewares/errors';
 import { corsOptions } from './config/cors';
+import { getUserValidator } from '../src/validations/user.validation';
 
 // Create a new express application instance
 const app = express();

@@ -1,1 +1,3 @@
-export const getUsers = () => {};
+export const createUser = (req, res) => {
+  res.send(req.body);
+};
