@@ -11,20 +11,20 @@ export default class User extends BaseModel {
   static get jsonSchema() {
     return {
       type: 'object',
-      required: [email, password, first_name, last_name],
+      required: ['email', 'password', 'firstName', 'lastName'],
       properties: {
         id: { type: 'integer' },
         email: { type: 'string', minLength: 1, maxLength: 64 },
-        password: { type: 'string', minLength: 6, maxLength: 16 },
-        first_name: { type: 'string', minLength: 1, maxLength: 20 },
-        last_name: { type: 'string', minLength: 1, maxLength: 30 },
+        password: { type: 'string', minLength: 6, maxLength: 255 },
+        firstName: { type: 'string', minLength: 1, maxLength: 20 },
+        lastName: { type: 'string', minLength: 1, maxLength: 30 },
       },
     };
   }
   static get relationMappings() {
     return {
       expenses: {
-        relation: Model.HasManyRelation,
+        relation: BaseModel.HasManyRelation,
         modelClass: Expense,
         join: {
           from: 'users.id',

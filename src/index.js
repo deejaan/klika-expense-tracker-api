@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import helmet from 'helmet';
 import { httpLogger } from './middlewares/logger';
-import router from './routes';
+import router from './routes/index';
 import { port } from './config/vars';
 import logger from './config/logger';
 import { errorHandler, errorConverter, notFound } from './middlewares/errors';
