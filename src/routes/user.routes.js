@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import { getUserValidator } from '../validations/user.validation';
+import { createUserValidator } from '../validations/user.validation';
 import { createUserController } from '../controllers/users';
 const router = Router();
-router.post('/', getUserValidator, createUserController);
+router.post('/', createUserValidator, createUserController);
 
 export default router;

@@ -8,7 +8,6 @@ import { port } from './config/vars';
 import logger from './config/logger';
 import { errorHandler, errorConverter, notFound } from './middlewares/errors';
 import { corsOptions } from './config/cors';
-import { getUserValidator } from '../src/validations/user.validation';
 
 // Create a new express application instance
 const app = express();

@@ -8,3 +8,5 @@ export const ErrorTypes = {
   DB_ERROR: 'DB_ERROR',
   INTERNAL_SERVER_ERROR: 'INTERNAL_SERVER_ERROR',
 };
+
+export const SALT_ROUNDS = 10;

@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import userRoutes from './user.routes';
-import { getUserValidator } from '../validations/user.validation';
 
 const router = Router();
 
