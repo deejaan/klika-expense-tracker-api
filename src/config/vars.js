@@ -25,4 +25,5 @@ module.exports = {
   dbUri: process.env.DB_URL,
   testDbUri: process.env.TEST_DB_URL,
   corsWhitelist: process.env.CORS_WHITELIST.split(' '),
+  JWT_KEY: process.env.JWT_KEY,
 };

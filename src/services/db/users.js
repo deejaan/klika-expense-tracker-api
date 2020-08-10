@@ -12,3 +12,7 @@ export const createUser = async user => {
   });
   return newUser;
 };
+export const getUserByEmail = async email => {
+  const userInDb = await User.query().where('email', email);
+  return userInDb;
+};
