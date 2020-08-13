@@ -12,7 +12,7 @@ export default class Category extends BaseModel {
   static get jsonSchema() {
     return {
       type: 'object',
-      required: [name],
+      required: ['name'],
       properties: {
         id: { type: 'integer' },
         name: { type: 'string', minLength: 1, maxLength: 20 },
