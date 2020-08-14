@@ -6,3 +6,8 @@ export const getExpensesByUserId = async id => {
     .where({ user_id: id });
   return expenses;
 };
+
+export const deleteExpense = async id => {
+  const numDeleted = await Expense.query().deleteById(id);
+  return numDeleted;
+};
