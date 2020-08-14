@@ -1,4 +1,8 @@
-import { getExpensesByUserId, deleteExpense } from '../services/db/expenses';
+import {
+  getExpensesByUserId,
+  addExpense,
+  deleteExpense,
+} from '../services/db/expenses';
 import { HttpError } from '../utils/httpError';
 
 export const getExpensesController = async (req, res, next) => {
@@ -6,6 +10,24 @@ export const getExpensesController = async (req, res, next) => {
     const id = req.id;
     const expenses = await getExpensesByUserId(id);
     res.status(200).send({ expenses: expenses });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const addExpenseController = async (req, res, next) => {
+  try {
+    const addedExpense = await addExpense(
+      req.id,
+      req.body.name,
+      req.body.categoryId,
+      req.body.description,
+      req.body.amount
+    );
+    res.status(201).send({
+      message: 'Expense ' + addedExpense.name + ' successfully added',
+      expense: addedExpense,
+    });
   } catch (error) {
     next(error);
   }

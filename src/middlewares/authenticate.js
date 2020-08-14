@@ -4,7 +4,7 @@ import { JWT_KEY } from '../config/vars';
 import { ErrorTypes } from '../config/constants';
 
 export const authenticate = (req, res, next) => {
-  var token = req.headers['token'];
+  var token = req.headers['authorization'];
   if (!token)
     throw new HttpError(401, 'No token provided', ErrorTypes.UNAUTHORIZED);
 
