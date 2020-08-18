@@ -4,13 +4,18 @@ import {
   getExpensesController,
   addExpenseController,
   deleteExpenseController,
+  editExpenseController,
 } from '../controllers/expenses';
-import { getExpenseValidator } from '../validations/expense.validation';
+import {
+  getExpenseValidator,
+  editExpenseValidator,
+} from '../validations/expense.validation';
 
 const router = Router();
 router.use(authenticate);
 router.get('/', getExpensesController);
 router.post('/', getExpenseValidator, addExpenseController);
 router.delete('/:id', deleteExpenseController);
+router.patch('/:id', editExpenseValidator, editExpenseController);
 
 export default router;

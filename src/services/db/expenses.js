@@ -23,3 +23,13 @@ export const deleteExpense = async id => {
   const numDeleted = await Expense.query().deleteById(id);
   return numDeleted;
 };
+
+export const editExpense = async (id, fieldsForEdit) => {
+  const updatedExpense = await Expense.query().patchAndFetchById(id, {
+    name: fieldsForEdit.name,
+    amount: fieldsForEdit.amount,
+    category_id: fieldsForEdit.category_id,
+    description: fieldsForEdit.description,
+  });
+  return updatedExpense;
+};

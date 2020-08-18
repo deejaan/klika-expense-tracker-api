@@ -2,6 +2,7 @@ import {
   getExpensesByUserId,
   addExpense,
   deleteExpense,
+  editExpense,
 } from '../services/db/expenses';
 import { HttpError } from '../utils/httpError';
 
@@ -40,6 +41,20 @@ export const deleteExpenseController = async (req, res, next) => {
     if (numDeleted != 1)
       throw new HttpError(422, 'Error while trying to delete expense');
     res.status(200).send('Expense successfully deleted');
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const editExpenseController = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const editedExpense = await editExpense(id, req.body.expense);
+    if (!editedExpense)
+      throw new HttpError(422, 'Error while trying to update expense');
+    res.status(200).send({
+      expense: editedExpense,
+    });
   } catch (error) {
     next(error);
   }
