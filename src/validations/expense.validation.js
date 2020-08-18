@@ -13,17 +13,17 @@ export const getExpenseValidator = [
 export const editExpenseValidator = [
   param('id').exists(),
   body('expense').exists(),
-  +body('expense.categoryId').optional().isNumeric(),
-  +body('expense.name')
+  body('expense.categoryId').optional().isNumeric(),
+  body('expense.name')
     .optional()
     .isLength({ min: 1 })
     .exists()
     .isLength({ max: 50 }),
-  +body('expense.description')
+  body('expense.description')
     .optional()
     .isLength({ min: 0 })
     .exists()
     .isLength({ max: 255 }),
-  +body('expense.amount').optional().isNumeric(),
+  body('expense.amount').optional().isNumeric(),
   validateResult,
 ];
