@@ -1,3 +1,10 @@
+App is deployed on this link:
+
+https://klika-expense-web.herokuapp.com/
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
 # klika-expense-tracker-api
 
 This is the api project for the klika calendar.
